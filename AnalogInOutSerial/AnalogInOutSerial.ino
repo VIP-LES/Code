@@ -13,8 +13,10 @@ int sensorTwoValue = 0;
 void setup() {
 
   Serial.begin(9600);
-  Serial.print("SensorOne");
-  Serial.println("\tPotentiometer");
+  /*Serial.print("SensorOne");
+  Serial.print(",");
+  Serial.println("Potentiometer");*/
+  delay(5);
 
 }
 
@@ -25,6 +27,6 @@ void loop() {
   
   Serial.print(sensorOneValue);
   Serial.print(",");
-  Serial.println("\t" + sensorTwoValue);
+  Serial.println(sensorTwoValue);
 
 }
