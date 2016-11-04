@@ -62,3 +62,4 @@ while (1):
         print(',')
     elif (GPIO.input(36) == 1):
         print('\n')
+    time.sleep(0.0001)
