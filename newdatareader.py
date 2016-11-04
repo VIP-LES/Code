@@ -38,6 +38,7 @@ GPIO.setup(32, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 
 while (GPIO.input(32) == 1):
+    print("hello")
     if (GPIO.input(7) == 1):
         print('0')
     elif (GPIO.input(11) == 1):
