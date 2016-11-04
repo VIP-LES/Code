@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
 
 
 # set up the GPIO channels - one input and one output
@@ -18,6 +18,21 @@ GPIO.setup(37, GPIO.IN)
 GPIO.setup(40, GPIO.IN)
 GPIO.setup(38, GPIO.IN)
 GPIO.setup(36, GPIO.IN)
+
+
+GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(15, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(29, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(31, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(33, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(35, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(37, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(40, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(38, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(36, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
 
 
 while (GPIO.imput(32) == 1):
