@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
-
+GPIO.setwarnings(False)
 
 # set up the GPIO channels - one input and one output
 GPIO.setup(7, GPIO.IN)
@@ -35,7 +35,7 @@ GPIO.setup(36, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 
 
-while (GPIO.imput(32) == 1):
+while (GPIO.input(32) == 1):
     if (GPIO.input(7) == 1):
         print('0')
     elif (GPIO.input(11) == 1):
