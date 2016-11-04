@@ -18,6 +18,7 @@ GPIO.setup(37, GPIO.IN)
 GPIO.setup(40, GPIO.IN)
 GPIO.setup(38, GPIO.IN)
 GPIO.setup(36, GPIO.IN)
+GPIO.setup(32, GPIO.IN)
 
 
 GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
@@ -32,6 +33,7 @@ GPIO.setup(37, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(40, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(38, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(36, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(32, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 
 
