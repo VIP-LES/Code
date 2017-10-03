@@ -6,8 +6,8 @@
 // Pins:
 // MCP3002  | Arduino Pin  |  Name
 //     Vdd  |  5V
-//     Gnd  |  Gnd
-//     CH0  |  3
+//     Vss  |  GND
+//     CH0  |  --
 //     CLK  |  13             SCK
 //     Din  |  11             MOSI
 //     Dout |  12             MISO
@@ -35,11 +35,6 @@ void setup() {
   digitalWrite(din, LOW);
   digitalWrite(cs, HIGH);
 
-  // Generate 50% duty cycle PWM for testing only
-  pinMode(3, OUTPUT);
-  analogWrite(3, 127);
-  
-
 }
 
 int readADC(byte settings) {
@@ -49,9 +44,9 @@ int readADC(byte settings) {
   digitalWrite(cs, LOW);
 
   // Send setup data to ADC
-  for (int i = 3; i >= 0; i++) {
+  for (int i = 3; i >= 0; i--) {
     //digitalWrite(din, (settings & (1 << i)) ? HIGH : LOW);
-    digitalWrite(din, settings & (1 << i));
+    digitalWrite(din, (settings >> i) & 1);
     digitalWrite(clk, HIGH);
     digitalWrite(clk, LOW);
   }
@@ -83,10 +78,10 @@ void loop() {
   // Second bit high indicates single ended mode
   // Third bit low indicates channel 0
   // Fourth bit high indicates MSB first
-  data = readADC(0xD);
+  data = readADC(0xD); // Single ended mode
+  //data = readADC(0x9); // Psuedo-differential mode
 
-  // Print data and wait 1 second
+  // Print data
   Serial.println(data);
-  delay(1000);
 
 }
