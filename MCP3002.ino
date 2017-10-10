@@ -45,7 +45,6 @@ int readADC(byte settings) {
 
   // Send setup data to ADC
   for (int i = 3; i >= 0; i--) {
-    //digitalWrite(din, (settings & (1 << i)) ? HIGH : LOW);
     digitalWrite(din, (settings >> i) & 1);
     digitalWrite(clk, HIGH);
     digitalWrite(clk, LOW);
