@@ -1,13 +1,11 @@
-// Arduino code to test the MCP3002 ADC chip.
-// Code outputs an analog signal with PWM to the
-// ADC which outputs a digital signal to the 
-// Arduino using SPI.
+// Arduino code to read data from the
+// MCP3002 ADC chip using SPI
 //
 // Pins:
 // MCP3002  | Arduino Pin  |  Name
-//     Vdd  |  5V
+//     Vdd  |  5V or 3.3V
 //     Vss  |  GND
-//     CH0  |  --
+//     CH0  |  --             Analog In
 //     CLK  |  13             SCK
 //     Din  |  11             MOSI
 //     Dout |  12             MISO
@@ -30,7 +28,7 @@ void setup() {
   pinMode(dout, INPUT);
   pinMode(cs, OUTPUT);
 
-  // Set beginning pin outputs
+  // Set initial pin outputs
   digitalWrite(clk, LOW);
   digitalWrite(din, LOW);
   digitalWrite(cs, HIGH);
