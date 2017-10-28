@@ -52,6 +52,7 @@ int readADC(byte settings) {
 
   // Ignore null bit
   digitalWrite(clk, HIGH);
+  delay(10);
   digitalWrite(clk, LOW);
 
   // Read 10 bits of data from ADC
